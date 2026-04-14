@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museu de Memórias - Pirapora</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button class="logo-circular" 
+            id="btn-logo"
+            onclick="toggleSidebar()" 
+            onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html" class="active">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="biblioteca.html">Danças</a>
+            <a href="sobre.html">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="header-principal text-center">
+            <h1 class="titulo-museu">Museu de Memórias</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="section-hero">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="slides-destaque"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <h2 class="titulo-sessao" style="text-align: center; font-family: 'Cinzel', serif; margin-bottom: 30px;">Cartografia Cultural</h2>
+
+        <section class="grid-cartografia">
+            <a href="acervo.html#saberes" class="card-botao" style="background-image: url('img/saberes.jpeg');">
+                <div class="overlay"></div><span>Saberes</span>
+            </a>
+            <a href="religiosidade.html" class="card-botao" style="background-image: url('img/entrada.jpeg');">
+                <div class="overlay"></div><span>Religiosidade</span>
+            </a>
+            <a href="acervo.html#carrancas" class="card-botao" style="background-image: url('img/caixa.jpeg');">
+                <div class="overlay"></div><span>Carrancas</span>
+            </a>
+            <a href="acervo.html#cozinha" class="card-botao" style="background-image: url('img/cozinha.jpeg');">
+                <div class="overlay"></div><span>Cotidiano</span>
+            </a>
+            <a href="acervo.html#brinquedos" class="card-botao" style="background-image: url('img/brinquedos.jpeg');">
+                <div class="overlay"></div><span>Brinquedos</span>
+            </a>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        
+        let isLocked = false; 
+
+        function handleMouseEnter() {
+            if (!isLocked) {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+            }
+        }
+
+        function handleMouseLeave() {
+            if (!isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+            }
+        }
+
+        function toggleSidebar() {
+            isLocked = !isLocked; 
+            
+            if (isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+                btnLogo.style.border = "3px solid white"; 
+            } else {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+
+        const wrapper = document.getElementById('slides-destaque');
+
+        async function iniciarMuseu() {
+            try {
+                const resposta = await fetch('carrossel.json?v=' + Date.now());
+                if (!resposta.ok) throw new Error(`Arquivo não encontrado`);
+                const dados = await resposta.json();
+                wrapper.innerHTML = ""; 
+
+                dados.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'swiper-slide';
+                    div.innerHTML = `<img src="${item.imagem}" alt="${item.legenda}">`;
+                    wrapper.appendChild(div);
+                });
+
+                new Swiper(".mySwiper", {
+                    loop: true,
+                    autoplay: { delay: 3000 },
+                    pagination: { el: ".swiper-pagination", clickable: true },
+                    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                    observer: true,
+                    observeParents: true
+                });
+            } catch (erro) {
+                console.error("Erro:", erro);
+            }
+        }
+
+        iniciarMuseu();
+
+        sidebar.addEventListener('transitionend', () => {
+            window.dispatchEvent(new Event('resize'));
+        });
+        
+    </script>
+</body>
+</html>

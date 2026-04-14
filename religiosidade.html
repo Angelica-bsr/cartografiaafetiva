@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Religiosidade - Museu de Memórias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* GRID PRINCIPAL */
+        .grid-religiosidade-nova {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr) !important;
+            gap: 25px !important;
+            padding: 20px !important;
+            align-items: stretch !important;
+        }
+
+        /* CARD */
+        .card-religiosidade-novo {
+            display: flex !important;
+            flex-direction: column !important;
+            background: #fff !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+            height: 100% !important;
+            overflow: visible !important;
+        }
+
+        /* MOLDURA E CENTRALIZAÇÃO DA IMAGEM */
+        .moldura-foto-fixa {
+            width: 100% !important;
+            display: block !important; /* Mudado para block para controle de margem */
+            padding: 20px 0 !important;
+            flex-shrink: 0 !important;
+            text-align: center; /* Centraliza o conteúdo inline/block */
+        }
+
+        .quadrado-perfeito-invisivel {
+            width: 250px !important;
+            height: 250px !important;
+            aspect-ratio: 1 / 1 !important;
+            overflow: hidden !important;
+            border: 3px solid transparent !important;
+            margin: 0 auto !important; /* CENTRALIZAÇÃO REAL */
+            display: block !important;
+        }
+
+        .quadrado-perfeito-invisivel img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            display: block !important;
+        }
+
+        /* TEXTO E CITAÇÕES */
+        .corpo-texto-religiosidade {
+            padding: 0 20px 20px 20px !important;
+            flex-grow: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+        }
+
+        .depoimento-quote {
+            margin: 15px 0 !important;
+            padding: 10px 15px !important;
+            border-left: 3px solid #d4af37 !important; /* Linha dourada */
+            font-style: italic !important;
+            color: #555 !important;
+            background: #f9f9f9 !important;
+            border-radius: 0 8px 8px 0 !important;
+            font-size: 0.9rem !important;
+            line-height: 1.6 !important;
+        }
+
+        .autor-citacao {
+            display: block !important;
+            margin-top: 8px !important;
+            font-weight: 700 !important;
+            font-size: 0.75rem !important;
+            color: #333 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            font-family: 'Open Sans', sans-serif !important;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1200px) { .grid-religiosidade-nova { grid-template-columns: repeat(2, 1fr) !important; } }
+        @media (max-width: 650px) { 
+            .grid-religiosidade-nova { grid-template-columns: 1fr !important; } 
+            .quadrado-perfeito-invisivel { width: 200px !important; height: 200px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html" class="active">Religiosidade</a>
+            <a href="biblioteca.html">Danças</a>
+            <a href="sobre.html">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 20px 40px 0 0;">
+            <a href="index.html" class="btn-leia-mais" style="font-size: 0.8rem; padding: 8px 15px;">← Início</a>
+        </div>
+
+        <header class="header-principal">
+            <h1 class="titulo-museu">Religiosidade e Fé</h1>
+            <div class="linha-decorativa"></div>
+            <p style="text-align: center; max-width: 800px; margin: 20px auto; font-family: 'Open Sans', sans-serif;">
+                A espiritualidade em Pirapora e região é um mosaico de devoção, resistência e ancestralidade, unindo as águas do Velho Chico às tradições de matriz africana e folias de reis.
+            </p>
+        </header>
+
+        <section class="secao-objetos">
+            <div class="grid-religiosidade-nova">
+                
+                <div class="card-religiosidade-novo">
+                    <div class="moldura-foto-fixa">
+                        <div class="quadrado-perfeito-invisivel">
+                            <img src="img/religiosidade/São Gonçalo/São Gonçalo1.png" alt="Grupo de São Gonçalo">
+                        </div>
+                    </div>
+                    <div class="corpo-texto-religiosidade">
+                        <div>
+                            <h3>Grupo de São Gonçalo</h3>
+                            <blockquote class="depoimento-quote">
+                                "O São Gonçalo é muito mais que uma simples imagem, uma simples dança, pois representa algo imensurável."
+                                <span class="autor-citacao">— Daniel F. da Silva Rocha</span>
+                            </blockquote>
+                        </div>
+                        <a href="saogoncalo.html" class="btn-leia-mais btn-conheca">Conheça a História</a>
+                    </div>
+                </div>
+
+                <div class="card-religiosidade-novo">
+                    <div class="moldura-foto-fixa">
+                        <div class="quadrado-perfeito-invisivel">
+                            <img src="img/religiosidade/Ilê Axé/Ilê Axé6.png" alt="Ilê Axé Ojun Ominadeui Ossi">
+                        </div>
+                    </div>
+                    <div class="corpo-texto-religiosidade">
+                        <div>
+                            <h3>Ilê Axé Ojun Ominadeui Ossi</h3>
+                            <blockquote class="depoimento-quote">
+                                "Dentro da religião, a gente passa a ver que nós somos parte da natureza [...] a mesma natureza que nos alimenta e depois nos recolhe."
+                                <span class="autor-citacao">— Dandareossi</span>
+                            </blockquote>
+                        </div>
+                        <a href="ileaxeojum.html" class="btn-leia-mais btn-conheca">Conheça a História</a>
+                    </div>
+                </div>
+
+                <div class="card-religiosidade-novo">
+                    <div class="moldura-foto-fixa">
+                        <div class="quadrado-perfeito-invisivel">
+                            <img src="img/religiosidade/Garça Branca/folia Garça Branca6.png" alt="Garça Branca do Peito de Aço">
+                        </div>
+                    </div>
+                    <div class="corpo-texto-religiosidade">
+                        <div>
+                            <h3>Garça Branca do Peito de Aço</h3>
+                            <blockquote class="depoimento-quote">
+                                "Entre o repique das cordas e o balanço da bandeira, o Garça Branca mantém viva a profecia dos Santos Reis. Uma peregrinação que alimenta a alma com rezas e herança."
+                                <span class="autor-citacao">— Tradição desde 1992</span>
+                            </blockquote>
+                        </div>
+                        <a href="garcabranca.html" class="btn-leia-mais btn-conheca">Conheça a História</a>
+                    </div>
+                </div>
+
+                <div class="card-religiosidade-novo">
+                    <div class="moldura-foto-fixa">
+                        <div class="quadrado-perfeito-invisivel">
+                            <img src="img/religiosidade/Ilê Axé odé/Ilê Axé odé.png" alt="Ilê Axé Odé Jun Queá">
+                        </div>
+                    </div>
+                    <div class="corpo-texto-religiosidade">
+                        <div>
+                            <h3>Ilê Axé Odé Jun Queá</h3>
+                            <blockquote class="depoimento-quote">
+                                "Nasceu em 1964, não apenas como um chão de reza, mas como um colo de mãe. Maria Curtinha plantou as raízes da Nação de Angola."
+                                <span class="autor-citacao">— Ialorixá Nalvinha</span>
+                            </blockquote>
+                        </div>
+                        <a href="ileaxeode.html" class="btn-leia-mais btn-conheca">Conheça a História</a>
+                    </div>
+                </div>
+
+                <div class="card-religiosidade-novo">
+                    <div class="moldura-foto-fixa">
+                        <div class="quadrado-perfeito-invisivel">
+                            <img src="img/religiosidade/Ylê Axé/paidedi.jpg" alt="Ylê Axé Ajagun">
+                        </div>
+                    </div>
+                    <div class="corpo-texto-religiosidade">
+                        <div>
+                            <h3>Ylê Axé Ajagun</h3>
+                            <blockquote class="depoimento-quote">
+                                "Minha cabeça, minha casa e minha vida pertencem a Nsumbu. O orixá corre nas minhas veias e o meu mundo é esse: um chão de fé às margens do São Francisco."
+                                <span class="autor-citacao">— Pai Dedi</span>
+                            </blockquote>
+                        </div>
+                        <a href="yleajagum.html" class="btn-leia-mais btn-conheca">Conheça a História</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 60px 0;">
+            <a href="index.html" class="btn-leia-mais">← Voltar para a Página Principal</a>
+        </div>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        let isLocked = false;
+        
+        function handleMouseEnter() { 
+            if (!isLocked) { 
+                sidebar.classList.add("visible"); 
+                mainContent.classList.add("pushed"); 
+            } 
+        }
+        
+        function handleMouseLeave() { 
+            if (!isLocked) { 
+                sidebar.classList.remove("visible"); 
+                mainContent.classList.remove("pushed"); 
+            } 
+        }
+        
+        function toggleSidebar() { 
+            isLocked = !isLocked; 
+            if (isLocked) { 
+                sidebar.classList.remove("visible"); 
+                mainContent.classList.remove("pushed"); 
+                btnLogo.style.border = "3px solid white"; 
+            } else { 
+                sidebar.classList.add("visible"); 
+                mainContent.classList.add("pushed"); 
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+    </script>
+</body>
+</html>

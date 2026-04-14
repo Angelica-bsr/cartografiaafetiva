@@ -1,0 +1,26 @@
+[
+  {
+    "imagem": "img/imgcarrosel/bonecas.png",
+    "legenda": "VeLho Chico"
+  },
+  {
+    "imagem": "img/imgcarrosel/brinquedos.png",
+    "legenda": "Brinquedos de Madeira"
+  },
+  {
+    "imagem": "img/imgcarrosel/carretel.png",
+    "legenda": "Ofícios e Costura"
+  },
+  {
+    "imagem": "img/imgcarrosel/fogao.png",
+    "legenda": "Cozinha Mineira"
+  },
+  {
+    "imagem": "img/imgcarrosel/ponto.png",
+    "legenda": "Ponto de Memória"
+  },
+  {
+    "imagem": "img/imgcarrosel/trabalhoecotidiano.png",
+    "legenda": "Trabalho e Cotidiano"
+  }
+]

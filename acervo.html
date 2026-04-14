@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saberes - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html" class="active">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="biblioteca.html">Danças</a>
+            <a href="sobre.html">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="header-principal text-center">
+            <h1 class="titulo-museu">Saberes e Ofícios</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p>A casa ribeirinha conserva um mutirão de vozes e costumes que ecoam pelos bairros e pela cidade inteira. São eles que nos contam sobre o cotidiano de um povo, da hora em que o sol se levanta até o momento em que ele se põe, todo alaranjado sobre o céu. Em cada espaço desse pequeno chão, em cada parede, se assenta a vida, o dia a dia que não cessa de acontecer.</p>
+                
+                <p>Ao amanhecer, nessa casa, coloca-se o café quente na mesa e, na falta o cuscuz, a farinha, o xiriri estão sempre ali para acalmar a fome.</p>
+                
+                <p>As crianças saem todas arrumadinhas, seguem para missa das 7 e só depois de muita avemaria, é que voltam para brincar no quintal, na porta da rua. O barulho das risadas e brincadeiras preenchem os cômodos e se mistura ao som da máquina de costura que atravessa veloz o tecido.</p>
+                
+                <p>Na hora do almoço, a costura fica pra depois. A meninada retorna e se aquieta à beira do fogão ou da mesa. E, nesse momento, a música que toma conta da casa é outra. As panelas formam uma sinfonia diversa de cheiros e cores tão familiar, que quase ninguém nota.</p>
+                
+                <p>É domingo. Hoje o leiteiro não passou. Uma vizinha chama à porta para pedir um pouco de arroz. Abre-se a lata na cozinha, faz-se o empréstimo do que não se ousa pedir de volta. Os que saíram para o trabalho, terminaram mais cedo o dia e começam a chegar, retiram as botas, guardam as ferramentas que tilintam na parede, suspiram alto o cansaço da lida.</p>
+
+                <div class="bloco-enfase">
+                    <p>(O rádio chia ao fundo, baixinho, baixinho).<br>
+                    Os ruídos quase silenciosos são cortados pela voz do desavisado que chega e grita já da porta:<br>
+                    - O que tem pro almoço hoje?<br>
+                    - Domingo é dia de frango, menino. Parece até que é broco.</p>
+                </div>
+
+                <p style="font-style: italic; font-size: 0.9rem; color: #666; margin-top: 30px; text-align: center;">
+                    (Este pequeno conto introduz de algum modo a temática desta galeria, destinada a evidenciar os saberes, práticas circunscritas ao espaço doméstico, à sabedoria ancestral, às superstições, receitas, etc.)
+                </p>
+            </div>
+        </section>
+
+        <div class="linha-decorativa" style="margin-bottom: 60px;"></div>
+
+        <section class="secao-saberes">
+    
+            <article class="saber-item">
+                <div class="moldura-foto">
+                    <img src="img/imgacervo/DanielFunileiro.png" alt="Daniel Funileiro" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto">
+                    <div class="saber-header">
+                        <h3>Daniel - Artesão Funileiro</h3>
+                    </div>
+                    <p class="citacao">“Nunca pensei em desistir. Vou morrer fazendo isso”.</p>
+                    <a href="daniel-funileiro.html" class="btn-leia-mais">Explorar História</a>
+                </div>
+            </article>
+
+            
+            <article class="saber-item">
+                <div class="moldura-foto">
+                    <img src="img/objetossaberes/_Cuscuzeiro artesanal.png" alt="Cuscuzeiro artesanal" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto">
+                    <div class="saber-header">
+                        <h3>Peças em Exibição (Utensílios)</h3>
+                    </div>
+                    <p>Conheça o acervo de objetos que compõem o cotidiano das casas ribeirinhas: de cuscuzeiros artesanais a xaropes naturais.</p>
+                    <a href="objetossaberes.html" class="btn-leia-mais">Ver Objetos</a>
+                </div>
+            </article>
+
+
+        </section>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        
+        let isLocked = false;
+
+        function handleMouseEnter() {
+            if (!isLocked) {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+            }
+        }
+
+        function handleMouseLeave() {
+            if (!isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+            }
+        }
+
+        function toggleSidebar() {
+            isLocked = !isLocked;
+            if (isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+                btnLogo.style.border = "3px solid white";
+            } else {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+    </script>
+</body>
+</html>;

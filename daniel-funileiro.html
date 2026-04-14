@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Funileiro - Museu de Memórias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html" class="active">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="biblioteca.html">Danças</a>
+            <a href="sobre.html">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="header-principal">
+            <h1 class="titulo-museu">Daniel - Artesão Funileiro</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p>Daniel Sampaio Celestino nasceu no bairro Nossa Senhora Aparecida, em Pirapora – MG, no ano de 1954. É artesão autônomo e reside ainda na comunidade em que cresceu, onde também mantém a sua oficina.</p>
+                
+                <p>A história de Daniel com o ofício de funilaria começa aos 12 anos, quando o pai lhe pediu que ajudasse um funileiro baiano, morador do bairro Lagoa (Nossa Senhora Aparecida), conhecido como <strong>Mestre Otávio do Flandres</strong> – o nome vem em referência ao material utilizado inicialmente na confecção das peças, a folha de flandres.</p>
+
+                <p>O menino auxiliava o mestre, limpava a casa, apanhava água no chafariz e, em troca dos serviços, Otávio ensinou a ele o ofício de funileiro. Mestre Otávio, que tinha “uma tenda e máquinas manuais”, instruiu Daniel a confeccionar poucas peças: uma chuculatera, uma cuscuzeira e uma lamparina, mas isso bastou para que o garoto continuasse.</p>
+
+                <div class="bloco-enfase">
+                    <p>“Essa funilaria é uma arte que veio com os artesãos antes da evolução dos alumínios; deve ter pra mais de 100 anos”.</p>
+                </div>
+
+                <p>A partir daí, o aprendiz seguiu por conta própria, pois havia tomado gosto pelo ofício e, além disso, precisava de uma fonte de renda para ajudar em casa. A funilaria foi e é fonte de renda do artesão que hoje, aos 67 anos, está aposentado pelo INSS.</p>
+
+                <p>Daniel também foi professor. Nos anos 90, foi contratado pelas administrações das cidades de Betim e Ipatinga para ensinar a arte da funilaria para menores em situação de rua. Por isso, ficou fora de Pirapora por quase 10 anos. “Já fui professor (...) sou culturalista e já fui também militante”.</p>
+
+                <p>Em sua oficina, Daniel produz diversos itens: cuscuzeiras de aço inox, formas para bolos – de variadas formas – lamparinas, brinquedos e objetos decorativos. As peças são desenhadas, modeladas, cortadas e montadas pelo artesão, que usa folhas de aço para dar forma aos objetos:</p>
+
+                <div class="bloco-enfase">
+                    <p>“Só o que eu já fiz... são mais de 90 peças, isso aqui é igual música”.</p>
+                </div>
+
+                <p>O artesão destaca que, para produzir as peças, precisa comprar os retalhos de aço em outro município mineiro; o que encarece a produção e dificulta o processo. Na região, Daniel é o único artesão que mantém vivo o ofício de funileiro: “diz o pessoal que só eu aqui na beira do rio das Gerais é que faço isso”.</p>
+
+                <p>Pela falta de incentivo e aprendizes, o artesão teme que seja o último funileiro em Pirapora. Mesmo diante das dificuldades, o artesão segue firme, produzindo e vendendo suas peças e deseja ter alguém a quem possa ensinar o ofício.</p>
+
+                <blockquote class="citacao-final">
+                    “Nunca pensei em desistir. Vou morrer fazendo isso”.
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="galeria-mestre-especifica">
+            <div class="moldura-galeria">
+                <img src="img/danielfunileiro/daniel1.png" alt="Daniel 1">
+            </div>
+            <div class="moldura-galeria">
+                <img src="img/danielfunileiro/daniel2.png" alt="Daniel 2">
+            </div>
+            <div class="moldura-galeria">
+                <img src="img/danielfunileiro/daniel3.png" alt="Daniel 3">
+            </div>
+            
+            <div class="moldura-galeria">
+                <img src="img/danielfunileiro/daniel4.png" alt="Daniel 4" style="object-position: center top;">
+            </div>
+
+            <div class="moldura-galeria">
+                <img src="img/danielfunileiro/daniel5.jpg" alt="Daniel 5">
+            </div>
+            <div class="moldura-galeria">
+                <img src="img/danielfunileiro/DanielFunileiro.png" alt="Daniel Funileiro">
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 80px 0;">
+            <a href="acervo.html" class="btn-leia-mais">← Voltar para Saberes</a>
+        </div>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        let isLocked = false;
+
+        function handleMouseEnter() { if (!isLocked) { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); } }
+        function handleMouseLeave() { if (!isLocked) { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); } }
+        function toggleSidebar() { 
+            isLocked = !isLocked; 
+            if (isLocked) { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); btnLogo.style.border = "3px solid white"; } 
+            else { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); btnLogo.style.border = "3px solid var(--marrom)"; }
+        }
+    </script>
+</body>
+</html>
