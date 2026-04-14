@@ -1,0 +1,617 @@
+/* ============================================================
+   1. CONFIGURAÇÕES ORIGINAIS (INDEX E ESTRUTURA GERAL)
+   ============================================================ */
+
+:root {
+    --dourado: #d4af37;
+    --marrom: #1a1a1a;
+    --sidebar-largura: 260px;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    background-color: #fdfaf6;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* --- Botão Logo Redondo --- */
+.logo-circular {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--dourado);
+    color: var(--marrom);
+    border: 3px solid var(--marrom);
+    border-radius: 50%;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 0.75rem;
+    cursor: pointer;
+    z-index: 2100;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.logo-circular:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: var(--sidebar-largura);
+    height: 100vh;
+    background: var(--marrom);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 110px 15px 30px;
+    border-right: 4px solid var(--dourado);
+    box-sizing: border-box;
+    z-index: 2000;
+    transform: translateX(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar.visible { transform: translateX(0); }
+.sidebar.hidden { transform: translateX(-100%) !important; }
+
+.sidebar::-webkit-scrollbar { width: 5px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--dourado); border-radius: 10px; }
+
+.sidebar .logo { color: white; text-align: center; margin-bottom: 40px; }
+.sidebar .logo h2 { font-family: 'Cinzel', serif; font-size: 1.2rem; margin: 0; }
+
+.sidebar nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.sidebar nav a:hover, .sidebar nav a.active { 
+    background: var(--dourado); 
+    color: var(--marrom); 
+}
+
+/* --- Conteúdo Principal --- */
+.main-content {
+    margin-left: 0;
+    padding: 40px;
+    flex: 1;
+    min-width: 0;
+    transition: margin-left 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.main-content.pushed { margin-left: var(--sidebar-largura); }
+.main-content.full-width { margin-left: 0 !important; }
+
+/* --- Elementos do Museu --- */
+.titulo-museu {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #3d332d;
+    margin: 40px 0 0;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.linha-decorativa { width: 100px; height: 3px; background: var(--dourado); margin: 10px auto 40px; }
+
+/* --- Ajuste Anti-Estouro do Carrossel (INDEX) --- */
+.swiper { 
+    width: 100%; 
+    height: 500px; 
+    border-radius: 15px; 
+    margin-bottom: 50px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+    background-color: #000; 
+}
+
+.swiper-slide img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+    display: block;
+}
+
+/* --- Grid de Botões --- */
+.grid-cartografia { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+    margin-top: 20px;
+}
+
+.card-botao {
+    height: 220px; 
+    background-size: cover; 
+    background-position: center; 
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-decoration: none;
+    position: relative; 
+    overflow: hidden; 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card-botao:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.overlay { 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.4); 
+    transition: background 0.3s;
+}
+
+.card-botao:hover .overlay { background: rgba(0,0,0,0.2); }
+
+.card-botao span { 
+    color: white; 
+    z-index: 2; 
+    font-family: 'Cinzel', serif; 
+    font-size: 1.4rem; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.9); 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ============================================================
+   2. ADIÇÕES ESPECÍFICAS DA PÁGINA DE ACERVO (SABERES)
+   ============================================================ */
+
+.secao-saberes {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.saber-item {
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    min-height: 380px; 
+    transition: transform 0.3s ease;
+}
+
+.saber-item:hover { 
+    transform: translateY(-5px); 
+}
+
+.saber-item.reverse { 
+    flex-direction: row-reverse; 
+}
+
+.moldura-foto {
+    flex: 0 0 380px; 
+    height: 300px;   
+    align-self: center; 
+    margin-left: 20px;  
+    margin-right: 20px;
+    overflow: hidden;
+    display: flex;
+    background-color: #fff; 
+    border-radius: 8px; 
+}
+
+.secao-saberes .imagem-ajustavel {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+    display: block;
+}
+
+.saber-texto {
+    flex: 1; 
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.saber-header h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--marrom);
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.citacao {
+    font-style: italic;
+    color: #555;
+    border-left: 4px solid var(--dourado);
+    padding-left: 20px;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.btn-leia-mais {
+    align-self: flex-start;
+    padding: 12px 30px;
+    background: var(--marrom);
+    color: var(--dourado);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 1px solid var(--marrom);
+    text-transform: uppercase;
+}
+
+.btn-leia-mais:hover {
+    background: var(--dourado);
+    color: var(--marrom);
+}
+
+/* ============================================================
+   3. PÁGINA DO MESTRE (DANIEL FUNILEIRO)
+   ============================================================ */
+
+.biografia-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 40px;
+}
+
+.biografia-texto p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.bloco-enfase {
+    margin: 25px auto;
+    padding: 15px;
+    max-width: 600px;
+    border-top: 1px solid var(--dourado);
+    border-bottom: 1px solid var(--dourado);
+    text-align: center;
+}
+
+.bloco-enfase p {
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    color: var(--marrom);
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.citacao-final {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--dourado);
+    margin: 40px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* ============================================================
+   4. PÁGINA DE ACERVO DE OBJETOS (TEXTO EMBAIXO E COMPLETO)
+   ============================================================ */
+
+.secao-objetos {
+    margin-bottom: 80px;
+    width: 100%;
+}
+
+.grid-objetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    width: 100%;
+    align-items: start; 
+}
+
+.card-objeto {
+    display: flex; 
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+    height: auto; 
+    min-height: 100%; 
+}
+
+.card-objeto:hover {
+    transform: translateY(-5px);
+}
+
+.moldura-objeto {
+    width: 100%;
+    height: 400px; 
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    flex-shrink: 0; 
+}
+
+.moldura-objeto img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    display: block;
+}
+
+.info-objeto {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+}
+
+.info-objeto h3 {
+    margin: 0 0 12px 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #5d4037;
+    border-bottom: 1px solid var(--dourado);
+    padding-bottom: 8px;
+}
+
+.info-objeto p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+    word-wrap: break-word; 
+    overflow: visible; 
+}
+
+/* ============================================================
+   5. RESPONSIVIDADE GERAL E AJUSTES FINAIS
+   ============================================================ */
+
+@media (max-width: 1200px) {
+    .grid-objetos { grid-template-columns: repeat(2, 1fr); }
+    .moldura-objeto { height: 350px; }
+}
+
+@media (max-width: 900px) {
+    .titulo-museu { font-size: 2.2rem; }
+    .swiper { height: 300px; }
+    .main-content { padding: 20px; }
+    
+    .saber-item, .saber-item.reverse { flex-direction: column; }
+    .moldura-foto { width: 90%; height: 250px; flex: none; margin: 20px auto; }
+    
+    .biografia-container { padding: 0 20px; }
+    .moldura-galeria { flex: 0 0 100%; height: 280px; }
+    
+    .grid-objetos { grid-template-columns: 1fr; }
+    .moldura-objeto { height: 400px; }
+}
+
+@media (max-width: 480px) {
+    .moldura-objeto { height: 280px; }
+    .moldura-galeria { height: 220px; }
+    .titulo-museu { font-size: 1.8rem; }
+}
+
+/* ============================================================
+   6. PÁGINA DE RELIGIOSIDADE - ISOLAMENTO TOTAL
+   ============================================================ */
+
+.grid-religiosidade-nova {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+    height: auto !important;
+}
+
+.card-religiosidade-novo {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1) !important;
+    height: 100% !important;
+    min-height: min-content !important;
+    overflow: visible !important; 
+}
+
+.moldura-foto-fixa {
+    width: 100% !important;
+    height: 280px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+.quadrado-perfeito-invisivel {
+    width: 250px !important;
+    height: 250px !important;
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
+    border: 3px solid transparent !important;
+}
+
+.quadrado-perfeito-invisivel img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.corpo-texto-religiosidade {
+    padding: 0 20px 20px 20px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+    height: auto !important;
+}
+
+.corpo-texto-religiosidade h3 {
+    font-family: 'Cinzel', serif !important;
+    margin-bottom: 10px !important;
+    flex-shrink: 0 !important;
+}
+
+.corpo-texto-religiosidade p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #444 !important;
+    margin-bottom: 20px !important;
+    height: auto !important;
+    display: block !important;
+    overflow: visible !important;
+    max-height: none !important;
+    white-space: normal !important; 
+}
+
+.btn-final-card {
+    margin-top: auto !important;
+    padding: 10px !important;
+    background: #1a1a1a !important;
+    color: #d4af37 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    font-family: 'Cinzel', serif !important;
+    border-radius: 5px !important;
+}
+
+.depoimento-quote {
+    margin: 15px 0 !important;
+    padding: 10px 15px !important;
+    border-left: 3px solid #d4af37 !important;
+    font-style: italic !important;
+    color: #555 !important;
+    background: #f9f9f9;
+    border-radius: 0 8px 8px 0;
+}
+/* ============================================================
+   7. GALERIA - TAMANHO ORIGINAL (SEM CORTES)
+   ============================================================ */
+
+.container-texto {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+/* Mural de fotos: Colunas automáticas */
+.galeria-religiosidade-final {
+    display: block; /* Mudamos para block para usar colunas de jornal (estilo Pinterest) */
+    column-count: 3; /* 3 colunas por padrão */
+    column-gap: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Moldura das fotos: REMOVIDO o 'height' fixo */
+.moldura-zoom {
+    display: inline-block; /* Importante para não quebrar a foto entre colunas */
+    width: 100%;
+    margin-bottom: 20px; /* Espaço entre as fotos na vertical */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moldura-zoom a {
+    display: block;
+    width: 100%;
+    cursor: zoom-in;
+}
+
+.moldura-zoom img {
+    width: 100%;
+    height: auto; /* A foto assume sua altura natural */
+    object-fit: contain; /* Garante que nada será cortado */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Efeitos de Interação */
+.moldura-zoom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.moldura-zoom:hover img {
+    transform: scale(1.05);
+}
+
+/* Rodapé do Acervo */
+.rodape-acervo {
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.rodape-acervo p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #999;
+    font-style: italic;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* Ajuste para Celulares */
+@media (max-width: 800px) {
+    .galeria-religiosidade-final {
+        column-count: 2; /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 500px) {
+    .galeria-religiosidade-final {
+        column-count: 1; /* 1 coluna em celulares */
+        padding: 20px;
+    }
+}
