@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danças Folclóricas - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html" class="active">Danças</a>
+            <a href="sobre.html">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="header-principal text-center">
+            <h1 class="titulo-museu">Danças Folclóricas</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p>O corpo que dança em Pirapora carrega o ritmo das águas e o peso da tradição. Nas rodas de São Gonçalo, nos passos do lundu ou na força do parafolclore, a dança é o manifesto vivo da nossa identidade ribeirinha.</p>
+                
+                <p>Estes grupos são guardiões de gestos ancestrais, traduzindo em coreografias a fé, o trabalho e o cotidiano de um povo que faz da celebração a sua forma de resistência e memória.</p>
+
+                <div class="bloco-enfase">
+                    <p>“Dançar a nossa terra é manter o passo firme no passado, com os olhos voltados para o futuro das nossas crianças.”</p>
+                </div>
+
+                <p style="font-style: italic; font-size: 0.9rem; color: #666; margin-top: 30px; text-align: center;">
+                    (Esta seção é dedicada a registrar a história e a expressão dos grupos que levam a cultura de Pirapora para os palcos e para as ruas.)
+                </p>
+            </div>
+        </section>
+
+        <div class="linha-decorativa" style="margin-bottom: 60px;"></div>
+
+        <section class="secao-saberes" style="max-width: 1200px; margin: 0 auto;">
+    
+            <article class="saber-item" style="display: flex; align-items: center; gap: 40px; margin-bottom: 60px;">
+                <div class="moldura-foto" style="flex: 1; max-width: 400px;">
+                    <img src="img/dancas/zabele/6.png" alt="Cia de Danças Parafolclóricas Zabelê" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto" style="flex: 2;">
+                    <div class="saber-header">
+                        <h3>CIA DE DANÇAS PARAFOLCLÓRICAS ZABELÊ</h3>
+                    </div>
+                    <p class="citacao">Fundado em 1984, o Grupo Zabelê é um coletivo de Pirapora dedicado à pesquisa e projeção do folclore brasileiro. Com respeito e reverência, o grupo transforma ritmos e danças populares em espetáculos que exaltam a pluralidade cultural e a alegria da sabedoria do povo.</p>
+                    <a href="zabele.html" class="btn-leia-mais">Explorar Grupo</a>
+                </div>
+            </article>
+
+            <article class="saber-item" style="display: flex; align-items: center; gap: 40px; margin-bottom: 60px;">
+                <div class="moldura-foto" style="flex: 1; max-width: 400px;">
+                    <img src="img/dancas/santacruz/1.png" alt="Grupo Folclórico Santa Cruz" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto" style="flex: 2;">
+                    <div class="saber-header">
+                        <h3>GRUPO FOLCLÓRICO SANTA CRUZ</h3>
+                    </div>
+                    <p class="citacao">O Grupo Santa Cruz preserva desde 1948 as raízes mineiras e a identidade barranqueira. Sob a liderança de Seo Carlos, o grupo celebra a vida rural e a ancestralidade afro-brasileira através de danças e ritmos autorais, mantendo viva a sabedoria popular às margens do Rio São Francisco.</p>
+                    <a href="santacruz.html" class="btn-leia-mais">Ver História</a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        
+        let isLocked = false;
+
+        function handleMouseEnter() {
+            if (!isLocked) {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+            }
+        }
+
+        function handleMouseLeave() {
+            if (!isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+            }
+        }
+
+        function toggleSidebar() {
+            isLocked = !isLocked;
+            if (isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+                btnLogo.style.border = "3px solid white";
+            } else {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+    </script>
+</body>
+</html>
