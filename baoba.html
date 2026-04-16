@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestra Lú Baobá - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html" class="active">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 20px 40px 0 0;">
+            <a href="capoeira.html" class="btn-leia-mais" style="font-size: 0.8rem; padding: 8px 15px;">← Voltar</a>
+        </div>
+
+        <header class="header-principal">
+            <h1 class="titulo-museu">Mestra Lú Baobá</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p><strong>Luciana Galiza Borges</strong> é mestre de capoeira, natural de Suzano – SP, nascida em janeiro de 1978. Cresceu em Pirapora-MG, cidade em que reside atualmente. Começou a aproximar-se da capoeira ainda criança, aos seis anos, tendo o pai, Mestre Careca, como seu mentor inicial.</p>
+
+                <p>Seu pai iniciou a trajetória como capoeirista aos 18 anos na Marinha do Brasil. Nos anos 90, quando decidiram abrir a academia em Pirapora, o cenário já contava com grupos tradicionais como o <em>Arte Negra Quilombo</em> e o <em>Capoeira de Angola – Luanda</em>. Esse ambiente fértil abrigou o crescimento de Luciana dentro do esporte e da cultura ancestral.</p>
+
+                <div class="bloco-enfase">
+                    <p>“A capoeira faz parte da minha vida como um todo, da minha infância até agora. Ela modifica tudo na minha vida, modifica tudo na minha trajetória.”</p>
+                </div>
+
+                <p>Desde 1994, Luciana e seu pai coordenam o grupo <strong>Cordão de Ouro</strong> e a <strong>Associação Amaê Berimbarte</strong>. Na instituição, ela atua como mestre, diretora de projetos e professora de capoeira, maculelê, puxada de rede e danças afro, oferecendo aulas gratuitas para jovens periféricos.</p>
+
+                <p>Para a Mestra Luciana, os maiores ganhos são sociais: o resgate da autoestima, o respeito pelo próximo e a manutenção da saúde através do esporte. Apesar das dificuldades financeiras e de espaço, a associação segue firme na preservação da cultura afro-brasileira em Pirapora.</p>
+            </div>
+        </section>
+
+        <section class="galeria-religiosidade-final">
+            
+            <div class="moldura-zoom">
+                <a href="img/capoeira/baoba/1.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 1">
+                    <img src="img/capoeira/baoba/1.png" alt="Mestra Lú 1">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/baoba/2.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 2">
+                    <img src="img/capoeira/baoba/2.png" alt="Mestra Lú 2">
+                </a>
+            </div>
+          
+            <div class="moldura-zoom">
+                <a href="img/capoeira/baoba/3.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 3">
+                    <img src="img/capoeira/baoba/3.png" alt="Mestra Lú 3">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/baoba/4.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 4">
+                    <img src="img/capoeira/baoba/4.png" alt="Mestra Lú 4">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/baoba/5.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 5">
+                    <img src="img/capoeira/baoba/5.png" alt="Mestra Lú 5">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/baoba/6.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 6">
+                    <img src="img/capoeira/baoba/6.png" alt="Mestra Lú 6">
+                </a>
+            </div>
+
+        </section>
+
+        <div style="text-align: center; margin: 60px 0 100px;">
+            <a href="capoeira.html" class="btn-leia-mais">← Voltar para Capoeira</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        lightbox.option({
+            'albumLabel': "Foto %1 de %2",
+            'wrapAround': true,
+            'fadeDuration': 300
+        });
+
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        let isLocked = false;
+
+        function handleMouseEnter() { if (!isLocked) { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); } }
+        function handleMouseLeave() { if (!isLocked) { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); } }
+        function toggleSidebar() { 
+            isLocked = !isLocked; 
+            if (isLocked) { 
+                sidebar.classList.remove("visible"); 
+                mainContent.classList.remove("pushed"); 
+                btnLogo.style.border = "3px solid white"; 
+            } else { 
+                sidebar.classList.add("visible"); 
+                mainContent.classList.add("pushed"); 
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+    </script>
+</body>
+</html>

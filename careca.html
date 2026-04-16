@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre Careca - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html" class="active">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 20px 40px 0 0;">
+            <a href="capoeira.html" class="btn-leia-mais" style="font-size: 0.8rem; padding: 8px 15px;">← Voltar</a>
+        </div>
+
+        <header class="header-principal">
+            <h1 class="titulo-museu">Mestre Careca</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p><strong>Adão Nunes Borges</strong> – o Mestre Careca – nasceu em Juazeiro/BA, em fevereiro de 1952. Encontrou-se com a capoeira na base naval de Aratu, em Salvador, no ano de 1971. Embora apresentado a outras lutas, escolheu a capoeira pelo profundo sentimento de pertencimento cultural.</p>
+
+                <p>Após vivências em São Paulo, chegou a Pirapora na década de 1980. Na cidade, treinou por quase 37 anos ao lado do Mestre Zezão, sua grande inspiração. Com mais de 50 anos de trajetória, Careca formou inúmeros alunos, incluindo sua filha, a Mestra Luciana Galiza.</p>
+
+                <div class="bloco-enfase">
+                    <p>“Capoeira não é só levantar o pé e jogar, capoeira é sabedoria. Ela é saúde, é educação física, é uma terapia.”</p>
+                </div>
+
+                <p>Especialista na <strong>Capoeira Angola</strong>, Mestre Careca segue os ensinamentos do pioneiro Mestre Pastinha. Para ele, a Angola é um jogo de vadiagem e paciência, onde os movimentos são lentos, rentes ao chão, exigindo astúcia e consciência corporal.</p>
+
+                <p>Em 1994, fundou a <strong>Associação Amaê Berimbarte</strong>, que atende gratuitamente cerca de 50 alunos no bairro Nossa Senhora do Rosário. Mesmo diante das dificuldades de espaço físico, ele não desanima: "A capoeira não pode parar. Seja valente igual a capoeira é".</p>
+                
+                <p style="text-align: center; font-style: italic; margin-top: 20px;">
+                    “Não preciso falar que sou mestre, o tempo me fez mestre.”
+                </p>
+            </div>
+        </section>
+
+        <section class="galeria-religiosidade-final">
+            
+            <div class="moldura-zoom">
+                <a href="img/capoeira/careca/5.png" data-lightbox="careca" data-title="Mestre Careca - Registro de Destaque">
+                    <img src="img/capoeira/careca/5.png" alt="Mestre Careca 5">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/careca/1.png" data-lightbox="careca" data-title="Mestre Careca - Registro 1">
+                    <img src="img/capoeira/careca/1.png" alt="Mestre Careca 1">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/careca/2.png" data-lightbox="careca" data-title="Mestre Careca - Registro 2">
+                    <img src="img/capoeira/careca/2.png" alt="Mestre Careca 2">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/careca/3.png" data-lightbox="careca" data-title="Mestre Careca - Registro 3">
+                    <img src="img/capoeira/careca/3.png" alt="Mestre Careca 3">
+                </a>
+            </div>
+
+            <div class="moldura-zoom">
+                <a href="img/capoeira/careca/4.png" data-lightbox="careca" data-title="Mestre Careca - Registro 4">
+                    <img src="img/capoeira/careca/4.png" alt="Mestre Careca 4">
+                </a>
+            </div>
+
+        </section>
+
+        <div style="text-align: center; margin: 60px 0 100px;">
+            <a href="capoeira.html" class="btn-leia-mais">← Voltar para Capoeira</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        lightbox.option({
+            'albumLabel': "Foto %1 de %2",
+            'wrapAround': true,
+            'fadeDuration': 300
+        });
+
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        let isLocked = false;
+
+        function handleMouseEnter() { if (!isLocked) { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); } }
+        function handleMouseLeave() { if (!isLocked) { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); } }
+        function toggleSidebar() { 
+            isLocked = !isLocked; 
+            if (isLocked) { 
+                sidebar.classList.remove("visible"); 
+                mainContent.classList.remove("pushed"); 
+                btnLogo.style.border = "3px solid white"; 
+            } else { 
+                sidebar.classList.add("visible"); 
+                mainContent.classList.add("pushed"); 
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre Cinturinha - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html" class="active">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 20px 40px 0 0;">
+            <a href="capoeira.html" class="btn-leia-mais" style="font-size: 0.8rem; padding: 8px 15px;">← Voltar</a>
+        </div>
+
+        <header class="header-principal">
+            <h1 class="titulo-museu">Mestre Cinturinha</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p><strong>Cândido Alécio de Oliveira</strong> (Mestre Cinturinha) é piraporense, nascido em março de 1962. Cinturinha é mestre capoeirista, presidente e coordenador da Associação de Capoeira Uganda, fundada em Pirapora-MG em 1991, ainda em funcionamento.</p>
+
+                <p>Mestre Cinturinha começou sua formação no esporte aos 17 anos, no período em que foi fuzileiro naval da Marinha do Brasil. Lá, teve oportunidade de aprender com os mestres Cantil e Portugal. Quando no retorno à Pirapora, Cinturinha manteve-se ainda em atividade na capoeira, sob os cuidados dos mestres Boca, Mazim e Zezão (in memoriam). Formou-se como grão-mestre pelas mãos do mestre Boca.</p>
+
+                <div class="bloco-enfase">
+                    <p>“Eu amo a capoeira. A capoeira é minha vida. Eu trabalho com a capoeira não por viver dela, mas vivo para ela.”</p>
+                </div>
+
+                <p>Apesar da paixão, o mestre observa que o esporte enfrenta ainda muito preconceito em ambientes institucionalizados, como as escolas. Onde o esporte deveria ser ensinado como patrimônio cultural, os mestres muitas vezes não têm o seu conhecimento validado institucionalmente, o que dificulta a difusão da prática.</p>
+            </div>
+        </section>
+
+        <section style="display: flex; justify-content: center; padding: 20px; margin-bottom: 80px;">
+            
+            <div style="background: white; padding: 10px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: fit-content;">
+                <a href="img/capoeira/cinturinha/1.png" data-lightbox="cinturinha" data-title="Mestre Cinturinha - Grão-Mestre">
+                    <img src="img/capoeira/cinturinha/1.png" alt="Mestre Cinturinha" style="max-width: 100%; height: auto; display: block; border: 1px solid #ddd;">
+                </a>
+                <p style="text-align: center; font-family: 'Cinzel', serif; font-size: 0.8rem; margin-top: 10px; color: #771d1d;">Mestre Cinturinha</p>
+            </div>
+
+        </section>
+
+        <div style="text-align: center; margin: 60px 0 100px;">
+            <a href="capoeira.html" class="btn-leia-mais">← Voltar para Capoeira</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+    <script>
+        lightbox.option({
+            'albumLabel': "Foto %1 de %2",
+            'wrapAround': true,
+            'fadeDuration': 300
+        });
+
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        let isLocked = false;
+
+        function handleMouseEnter() { if (!isLocked) { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); } }
+        function handleMouseLeave() { if (!isLocked) { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); } }
+        function toggleSidebar() { 
+            isLocked = !isLocked; 
+            if (isLocked) { 
+                sidebar.classList.remove("visible"); 
+                mainContent.classList.remove("pushed"); 
+                btnLogo.style.border = "3px solid white"; 
+            } else { 
+                sidebar.classList.add("visible"); 
+                mainContent.classList.add("pushed"); 
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+    </script>
+</body>
+</html>
