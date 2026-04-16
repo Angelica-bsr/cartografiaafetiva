@@ -8,6 +8,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        /* Container da Galeria: 2 fotos por linha */
+        .galeria-natural-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Força 2 colunas */
+            gap: 40px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-items: center;
+        }
+
+        /* Moldura estilo quadro de museu */
+        .moldura-exposicao {
+            background: white;
+            padding: 12px;
+            border-radius: 2px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            max-width: 100%;
+        }
+
+        .moldura-exposicao:hover {
+            transform: scale(1.03);
+        }
+
+        /* Imagem em tamanho natural (proporcional) */
+        .moldura-exposicao img {
+            display: block;
+            width: 100%;
+            height: auto; /* Mantém a proporção sem distorcer ou cortar */
+            border: 1px solid #eee;
+        }
+
+        /* Ajuste para telas pequenas (celulares) */
+        @media (max-width: 768px) {
+            .galeria-natural-grid {
+                grid-template-columns: 1fr; /* 1 foto por linha no mobile */
+                gap: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -60,39 +102,39 @@
             </div>
         </section>
 
-        <section class="galeria-religiosidade-final">
+        <section class="galeria-natural-grid">
             
-            <div class="moldura-zoom">
+            <div class="moldura-exposicao">
                 <a href="img/capoeira/baoba/1.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 1">
                     <img src="img/capoeira/baoba/1.png" alt="Mestra Lú 1">
                 </a>
             </div>
 
-            <div class="moldura-zoom">
+            <div class="moldura-exposicao">
                 <a href="img/capoeira/baoba/2.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 2">
                     <img src="img/capoeira/baoba/2.png" alt="Mestra Lú 2">
                 </a>
             </div>
           
-            <div class="moldura-zoom">
+            <div class="moldura-exposicao">
                 <a href="img/capoeira/baoba/3.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 3">
                     <img src="img/capoeira/baoba/3.png" alt="Mestra Lú 3">
                 </a>
             </div>
 
-            <div class="moldura-zoom">
+            <div class="moldura-exposicao">
                 <a href="img/capoeira/baoba/4.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 4">
                     <img src="img/capoeira/baoba/4.png" alt="Mestra Lú 4">
                 </a>
             </div>
 
-            <div class="moldura-zoom">
+            <div class="moldura-exposicao">
                 <a href="img/capoeira/baoba/5.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 5">
                     <img src="img/capoeira/baoba/5.png" alt="Mestra Lú 5">
                 </a>
             </div>
 
-            <div class="moldura-zoom">
+            <div class="moldura-exposicao">
                 <a href="img/capoeira/baoba/6.png" data-lightbox="baoba" data-title="Mestra Lú Baobá - Registro 6">
                     <img src="img/capoeira/baoba/6.png" alt="Mestra Lú 6">
                 </a>
