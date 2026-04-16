@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestres - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html">Capoeira</a>
+            <a href="mestres.html" class="active">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        <header class="header-principal text-center">
+            <h1 class="titulo-museu">Mestres e Carrancas</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p>As águas do São Francisco não trazem apenas o sustento, mas carregam o mistério e a arte que moldaram a identidade de Pirapora. Entre as batidas do formão na madeira e o olhar atento às correntezas, surgiram as carrancas — figuras míticas que protegiam os barqueiros e hoje guardam a nossa história.</p>
+                
+                <p>Nesta galeria, celebramos os homens e mulheres que, com suas mãos e sabedoria, mantêm viva a tradição barranqueira. São mestres artesãos, contadores de histórias e guardiões de um ofício que transforma madeira bruta em memória viva.</p>
+
+                <div class="bloco-enfase">
+                    <p>“A madeira grita o que quer ser, e o mestre apenas obedece o desenho que a alma do rio já traçou.”</p>
+                </div>
+
+                <p style="font-style: italic; font-size: 0.9rem; color: #666; margin-top: 30px; text-align: center;">
+                    (Esta galeria é dedicada aos mestres das carrancas e aos detentores de saberes que protegem a herança cultural do Velho Chico em nossa região.)
+                </p>
+            </div>
+        </section>
+
+        <div class="linha-decorativa" style="margin-bottom: 60px;"></div>
+
+        <section class="secao-saberes">
+    
+            <article class="saber-item">
+                <div class="moldura-foto">
+                    <img src="img/carrancas/expedito/2.png" alt="Mestre Expedito Viana" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto">
+                    <div class="saber-header">
+                        <h3>Expedito Viana</h3>
+                    </div>
+                    <p class="citacao">“Ainda na infância, comecei a fazer trabalhos, miniaturas e os meus brinquedos, através do meu pai que trabalhava com as ferramentas (...). Basta desenhar algo e já consigo imaginar a forma sendo feita na madeira.”</p>
+                    <a href="expedito.html" class="btn-leia-mais">Explorar História</a>
+                </div>
+            </article>
+
+            <article class="saber-item">
+                <div class="moldura-foto">
+                    <img src="img/carrancas/gelson/3.png" alt="Mestre Gelson Xavier" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto">
+                    <div class="saber-header">
+                        <h3>Gelson Xavier</h3>
+                    </div>
+                    <p class="citacao">"Mestre Gelson assina a própria história no cedro, unindo a técnica herdada do pai ao mistério das figuras que um dia cortaram as águas do Velho Chico."</p>
+                    <a href="gelson.html" class="btn-leia-mais">Explorar História</a>
+                </div>
+            </article>
+
+            <article class="saber-item">
+                <div class="moldura-foto">
+                    <img src="img/carrancas/luzia/1.png" alt="Mestra Dona Luzia" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto">
+                    <div class="saber-header">
+                        <h3>Dona Luzia</h3>
+                    </div>
+                    <p class="citacao">"Sem o rio, nós não somos nada, porque somos a alma do rio. Se nós não defender ele, quem que vai defender?"</p>
+                    <a href="luzia.html" class="btn-leia-mais">Explorar História</a>
+                </div>
+            </article>
+
+            <article class="saber-item">
+                <div class="moldura-foto">
+                    <img src="img/carrancas/maria/1.png" alt="Maria Martinha" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto">
+                    <div class="saber-header">
+                        <h3>Maria Martinha</h3>
+                    </div>
+                    <p class="citacao">"Mestra do entalhe e da resiliência, Maria Martinha perpetua o ofício familiar como um símbolo de afeto, mantendo viva a história que esculpe o rosto da nossa cidade."</p>
+                    <a href="maria.html" class="btn-leia-mais">Explorar História</a>
+                </div>
+            </article>
+
+            <article class="saber-item">
+                <div class="moldura-foto">
+                    <img src="img/carrancas/bonifacia/1.png" alt="Bonifácia Pereira" class="imagem-ajustavel">
+                </div>
+                <div class="saber-texto">
+                    <div class="saber-header">
+                        <h3>Bonifácia Pereira</h3>
+                    </div>
+                    <p class="citacao">"Entre o formão e a madeira, Mestra Bonifácia mantém vivo o pulsar do São Francisco, perpetuando a tradição das carrancas como um ato de puro amor e resistência."</p>
+                    <a href="bonifacia.html" class="btn-leia-mais">Explorar História</a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const btnLogo = document.getElementById("btn-logo");
+        
+        let isLocked = false;
+
+        function handleMouseEnter() {
+            if (!isLocked) {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+            }
+        }
+
+        function handleMouseLeave() {
+            if (!isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+            }
+        }
+
+        function toggleSidebar() {
+            isLocked = !isLocked;
+            if (isLocked) {
+                sidebar.classList.remove("visible");
+                mainContent.classList.remove("pushed");
+                btnLogo.style.border = "3px solid white";
+            } else {
+                sidebar.classList.add("visible");
+                mainContent.classList.add("pushed");
+                btnLogo.style.border = "3px solid var(--marrom)"; 
+            }
+        }
+    </script>
+</body>
+</html>

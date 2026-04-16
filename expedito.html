@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre Expedito Viana - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        .moldura-expo {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: fit-content;
+            margin: 15px;
+            transition: transform 0.3s ease;
+        }
+        .moldura-expo:hover {
+            transform: scale(1.02);
+        }
+        .foto-galeria {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+        .galeria-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            margin-bottom: 80px;
+        }
+        .nota-rodape {
+            font-size: 0.8rem;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html">Capoeira</a>
+            <a href="mestres.html" class="active">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 20px 40px 0 0;">
+            <a href="mestres.html" class="btn-leia-mais" style="font-size: 0.8rem; padding: 8px 15px;">← Voltar</a>
+        </div>
+
+        <header class="header-principal">
+            <h1 class="titulo-museu">Expedito Viana</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p><strong>Expedito Viana</strong> é um dos quatro filhos de uma família baiana, nascido em setembro de 1953. Artista por vocação e profissão, marceneiro e carranqueiro, Expedito coleciona histórias de uma profissão comum em cidades ribeirinhas – a de escultor de carrancas – e que vemos se perder pela falta de incentivo público e criação de novas gerações que façam o trabalho que os mais velhos ensinam.</p>
+                
+                <p>Esse artista múltiplo, talhador de muitas formas sob a madeira, é natural de Santana do Sobrado, Bahia. O pai era também marceneiro e construía embarcações, enquanto a mãe era costureira e artesã. Expedito se orgulha de seu autodidatismo: <em>“ainda na infância, comecei a fazer trabalhos, miniaturas e os meus brinquedos, através do meu pai que trabalhava com as ferramentas (...)”</em>.</p>
+
+                <div class="bloco-enfase">
+                    <p>“A carranca é arte tradicional ribeirinha, quem começou é nascido na margem do São Francisco também, o Guarany¹.”</p>
+                </div>
+
+                <p>A família chegou a Pirapora em 1974, a bordo do <strong>Vapor São Francisco</strong>, após o deslocamento forçado pela construção da barragem de Sobradinho. Em Pirapora, Expedito continuou o ofício, incentivado por Raimundo Boaventura Leite (Dedeco), mas mantendo o gosto pelas carrancas que aprendeu com o baiano Guarani.</p>
+
+                <p>Suas esculturas foram reconhecidas em vários estados do Brasil e no exterior. O escultor se lembra com orgulho de ter talhado uma carranca tão grandiosa que precisou entrar na boca da peça para talhar-lhe os dentes. Hoje, ele mantém seu ateliê no bairro Santos Dumont, trabalhando sob encomenda e garantindo que cada peça seja rica em detalhes e perfeição.</p>
+
+                <div class="nota-rodape">
+                    ¹ Expedito refere-se ao renomado mestre baiano Francisco Biquiba Guarany.
+                </div>
+            </div>
+        </section>
+
+        <div class="linha-decorativa" style="margin: 40px auto; width: 80%;"></div>
+
+        <section class="galeria-flex">
+            
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/1.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 1">
+                    <img src="img/carrancas/expedito/1.png" alt="Expedito 1" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/2.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 2">
+                    <img src="img/carrancas/expedito/2.png" alt="Expedito 2" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/3.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 3">
+                    <img src="img/carrancas/expedito/3.png" alt="Expedito 3" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/4.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 4">
+                    <img src="img/carrancas/expedito/4.png" alt="Expedito 4" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/5.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 5">
+                    <img src="img/carrancas/expedito/5.png" alt="Expedito 5" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/6.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 6">
+                    <img src="img/carrancas/expedito/6.png" alt="Expedito 6" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/7.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 7">
+                    <img src="img/carrancas/expedito/7.png" alt="Expedito 7" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/8.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 8">
+                    <img src="img/carrancas/expedito/8.png" alt="Expedito 8" class="foto-galeria">
+                </a>
+            </div>
+
+            <div class="moldura-expo">
+                <a href="img/carrancas/expedito/9.png" data-lightbox="expedito" data-title="Obra de Mestre Expedito - 9">
+                    <img src="img/carrancas/expedito/9.png" alt="Expedito 9" class="foto-galeria">
+                </a>
+            </div>
+
+        </section>
+
+        <div style="text-align: center; margin: 60px 0 100px;">
+            <a href="mestres.html" class="btn-leia-mais">← Voltar para Carrancas</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'albumLabel': "Foto %1 de %2",
+            'wrapAround': true,
+            'fadeDuration': 300
+        });
+
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        function handleMouseEnter() { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); }
+        function handleMouseLeave() { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); }
+        function toggleSidebar() { sidebar.classList.toggle("visible"); mainContent.classList.toggle("pushed"); }
+    </script>
+</body>
+</html>

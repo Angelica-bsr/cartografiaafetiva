@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Martinha - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        .moldura-expo {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: fit-content;
+            margin: 30px auto;
+            transition: transform 0.3s ease;
+        }
+        .foto-principal {
+            max-width: 100%;
+            max-height: 500px;
+            height: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html">Capoeira</a>
+            <a href="mestres.html" class="active">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 20px 40px 0 0;">
+            <a href="mestres.html" class="btn-leia-mais" style="font-size: 0.8rem; padding: 8px 15px;">← Voltar</a>
+        </div>
+
+        <header class="header-principal">
+            <h1 class="titulo-museu">Maria Martinha</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p><strong>Maria Martinha Soares dos Santos</strong> nasceu em São Romão, em abril de 1962. Viveu parte da infância na comunidade rural de Laranjeiras junto a sua família, até serem desapropriados da terra. Martinha veio para Pirapora aos 10 anos de idade, estabelecendo-se com sua família inicialmente no bairro Aparecida e, posteriormente, no Vila Branca após a enchente de 1979.</p>
+                
+                <p>Sua trajetória como artesã começou a partir de uma provocação do pai, que já esculpia carrancas e a incentivou a talhar sua própria peça. Martinha revelou uma facilidade natural no entalhe e, assim como seus familiares, percebeu na arte um modo digno de subsistência.</p>
+
+                <div class="bloco-enfase">
+                    <p>“A carranca representa a cultura piraporense e a força da nossa família em transformar a madeira em arte viva.”</p>
+                </div>
+
+                <p>Embora tenha trabalhado em outros setores como carvoaria, fábricas e comércio, Martinha retornou ao ofício aprendido com o pai. Hoje, a artesã segue ao lado de seus familiares — D. Luzia, Bonifácia e Gelson — mantendo viva a tradição e o legado da escultura em madeira em Pirapora.</p>
+            </div>
+        </section>
+
+        <section style="padding: 20px; text-align: center;">
+            <div class="moldura-expo">
+                <a href="img/carrancas/maria/2.png" data-lightbox="maria" data-title="Mestra Maria Martinha - Carranca em Madeira">
+                    <img src="img/carrancas/maria/2.png" alt="Obra de Maria Martinha" class="foto-principal">
+                </a>
+                <p style="margin-top: 10px; font-family: 'Cinzel', serif; font-size: 0.85rem; color: #771d1d; font-weight: bold;">
+                   Maria Martinha
+                </p>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 60px 0 100px;">
+            <a href="mestres.html" class="btn-leia-mais">← Voltar para Carrancas</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        function handleMouseEnter() { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); }
+        function handleMouseLeave() { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); }
+        function toggleSidebar() { sidebar.classList.toggle("visible"); mainContent.classList.toggle("pushed"); }
+    </script>
+</body>
+</html>

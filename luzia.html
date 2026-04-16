@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona Luzia - Museu de Memórias</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        .moldura-expo {
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: fit-content;
+            margin: 10px;
+        }
+        .foto-mini {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+        .galeria-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .linha-cheia { width: 100%; display: flex; justify-content: center; flex-wrap: wrap; }
+
+        /* Estilo para a seção do vídeo com legenda lateral */
+        .video-secao-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px auto;
+            max-width: 1100px;
+            padding: 0 20px;
+        }
+        .video-wrapper {
+            flex: 3;
+            aspect-ratio: 16/9;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .video-legenda {
+            flex: 1;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #444;
+            padding: 15px;
+            border-left: 3px solid #771d1d;
+            background: rgba(255,255,255,0.5);
+        }
+        .video-legenda strong { font-family: 'Cinzel', serif; color: #771d1d; display: block; margin-bottom: 5px; }
+
+        @media (max-width: 900px) {
+            .video-secao-container { flex-direction: column; align-items: center; }
+            .video-legenda { border-left: none; border-top: 3px solid #771d1d; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html">Capoeira</a>
+            <a href="mestres.html" class="active">Carrancas</a>
+            <a href="biblioteca.html">Gente e Território</a>
+            <a href="sobre.html">Trabalho e Cotidiano</a>
+            <a href="sobre.html">Cultura da Criança</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <div style="display: flex; justify-content: flex-end; padding: 20px 40px 0 0;">
+            <a href="mestres.html" class="btn-leia-mais" style="font-size: 0.8rem; padding: 8px 15px;">← Voltar</a>
+        </div>
+
+        <header class="header-principal">
+            <h1 class="titulo-museu">Dona Luzia</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="biografia-container">
+            <div class="biografia-texto">
+                <p><strong>Dona Luzia</strong>, como é conhecida, é carranqueira em Pirapora - MG. Nascida em dezembro de 1955, casou-se cedo, antes de completar a maioridade. É natural de São Romão, onde viveu com o marido e a família em uma comunidade rural. Mudaram-se para Pirapora após serem desapropriados das terras em que residiam. Não recorda o ano exato em que chegou à cidade, mas destaca a longevidade com que a atividade vem sendo desenvolvida em suas mãos.</p>
+                
+                <p>A carranqueira é referência na região e relata que aprendeu com o seu irmão Sabino a arte de talhar a madeira. Este, por sua vez, foi incentivado pelo Raimundo Nonato, conhecido como Dedeco. O feitio foi aprendido entre os membros da família que residiam inicialmente no tradicional bairro Aparecida. Após a enchente de 1979, D. Luzia e a família mudaram-se, com a ajuda de Dedeco, para o bairro Vila Branca, onde construíram também a oficina de trabalho.</p>
+
+                <div class="bloco-enfase">
+                    <p>“As mãos e a alegria do ofício de D. Luzia, a despeito do tempo, não parecem vacilar frente ao objetivo maior: esculpir as figuras de proa.”</p>
+                </div>
+
+                <p>Luzia lembra-se com orgulho de como a profissão foi o meio pelo qual pôde sustentar a família. Hoje, aos quase 66 anos e reconhecida como uma das precursoras entre os carranqueiros piraporenses, Luzia ensina pacientemente àqueles que vêm em busca de conhecimento prático sobre o manuseio das ferramentas que transformam a madeira em carranca.</p>
+            </div>
+        </section>
+
+        <section class="video-secao-container">
+            <div class="video-wrapper">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/uSoTp1Wx03g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-legenda">
+                <strong>Ficha Técnica</strong>
+                <p><strong>Vídeo:</strong> Conhecer para amar - Dona Luzia Carneiro, carranqueira de Pirapora.</p>
+                <p><strong>Produção:</strong> CBH Rio São Francisco.</p>
+                <p><strong>Contexto:</strong> Um registro sensível sobre a tradição das carraqueiras e a ancestralidade ligada ao Velho Chico.</p>
+                <p style="margin-top: 10px; font-size: 0.75rem;"><a href="https://www.youtube.com/watch?v=uSoTp1Wx03g" target="_blank" style="color: #771d1d; text-decoration: underline;">Assistir no YouTube</a></p>
+            </div>
+        </section>
+
+        <section class="galeria-container">
+            
+            <div class="linha-cheia">
+                <div class="moldura-expo">
+                    <a href="img/carrancas/luzia/6.png" data-lightbox="luzia">
+                        <img src="img/carrancas/luzia/6.png" alt="Foto 6" style="max-width: 100%; height: auto; display: block;">
+                    </a>
+                </div>
+            </div>
+
+            <div class="linha-cheia">
+                <div class="moldura-expo">
+                    <a href="img/carrancas/luzia/2.png" data-lightbox="luzia"><img src="img/carrancas/luzia/2.png" class="foto-mini"></a>
+                </div>
+                <div class="moldura-expo">
+                    <a href="img/carrancas/luzia/3.png" data-lightbox="luzia"><img src="img/carrancas/luzia/3.png" class="foto-mini"></a>
+                </div>
+                <div class="moldura-expo">
+                    <a href="img/carrancas/luzia/4.png" data-lightbox="luzia"><img src="img/carrancas/luzia/4.png" class="foto-mini"></a>
+                </div>
+            </div>
+
+            <div class="linha-cheia">
+                <div class="moldura-expo">
+                    <a href="img/carrancas/luzia/1.png" data-lightbox="luzia">
+                        <img src="img/carrancas/luzia/1.png" alt="Foto 1" style="max-width: 400px; width: 100%; height: auto;">
+                    </a>
+                </div>
+                <div class="moldura-expo">
+                    <a href="img/carrancas/luzia/5.png" data-lightbox="luzia">
+                        <img src="img/carrancas/luzia/5.png" alt="Foto 5" style="max-width: 400px; width: 100%; height: auto;">
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <div style="text-align: center; margin: 60px 0 100px;">
+            <a href="mestres.html" class="btn-leia-mais">← Voltar para Carrancas</a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        function handleMouseEnter() { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); }
+        function handleMouseLeave() { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); }
+        function toggleSidebar() { sidebar.classList.toggle("visible"); mainContent.classList.toggle("pushed"); }
+    </script>
+</body>
+</html>
