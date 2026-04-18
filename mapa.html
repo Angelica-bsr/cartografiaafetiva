@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartografia de Memórias - Museu de Pirapora</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .mapa-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .mapa-moldura {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+            border: 2px solid #771d1d;
+        }
+
+        .mapa-iframe-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .mapa-iframe-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .texto-cartografia {
+            max-width: 850px;
+            margin: 40px auto;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            color: #444;
+            line-height: 1.8;
+            padding: 0 20px;
+        }
+
+        .legenda-mapa {
+            background: #fdf2f2;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 5px solid #771d1d;
+            text-align: left;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="logo-circular" id="btn-logo" onclick="toggleSidebar()" onmouseenter="handleMouseEnter()">
+        MUSEU DE<br>MEMÓRIAS
+    </button>
+
+    <aside class="sidebar" id="sidebar" onmouseleave="handleMouseLeave()">
+        <div class="logo">
+            <h2>MUSEU DE MEMÓRIAS</h2>
+            <p>Pirapora - MG</p>
+        </div>
+        <nav>
+            <a href="index.html">Sobre</a>
+            <a href="acervo.html">Saberes</a>
+            <a href="religiosidade.html">Religiosidade</a>
+            <a href="dancas.html">Danças</a>
+            <a href="capoeira.html">Capoeira</a>
+            <a href="mestres.html">Carrancas</a>
+            <a href="mapa.html" class="active">Cartografia</a>
+            <a href="biblioteca.html">Gente e Território</a>
+        </nav>
+    </aside>
+
+    <main class="main-content" id="main-content">
+        
+        <header class="header-principal">
+            <h1 class="titulo-museu">Cartografia de Memórias</h1>
+            <div class="linha-decorativa"></div>
+        </header>
+
+        <section class="texto-cartografia">
+            <h2 style="font-family: 'Cinzel', serif; color: #771d1d; margin-bottom: 20px;">O Território como Acervo</h2>
+            <p>Se o mapa não carregar imediatamente, limpe o cache do seu navegador ou clique no botão de tela cheia abaixo.</p>
+        </section>
+
+        <section class="mapa-container">
+            <div class="mapa-moldura">
+                <div class="mapa-iframe-wrapper">
+                   <iframe src="https://www.google.com/maps/d/embed?mid=1_OPC_qEESmzTsZtKHpfum-ADDd-L5Ws&ehbc=2E312F" width="640" height="480"></iframe>
+                </div>
+            </div>
+
+           <div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.google.com/maps/d/embed?mid=1_OPC_qEESmzTsZtKHpfum-ADDd-L5Ws&ehbc=2E312F" target="_blank" class="btn-leia-mais" style="text-decoration: none; display: inline-block;">
+        Abrir Mapa em Tela Cheia ↗
+    </a>
+</div>
+
+            <div style="text-align: center;">
+                <div class="legenda-mapa">
+                    <strong style="font-family: 'Cinzel', serif; color: #771d1d;">Dica:</strong>
+                    <p style="margin: 10px 0 0; font-size: 0.95rem; color: #555;">Clique nos marcadores para ver informações sobre cada local.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        function handleMouseEnter() { sidebar.classList.add("visible"); mainContent.classList.add("pushed"); }
+        function handleMouseLeave() { sidebar.classList.remove("visible"); mainContent.classList.remove("pushed"); }
+        function toggleSidebar() { sidebar.classList.toggle("visible"); mainContent.classList.toggle("pushed"); }
+    </script>
+</body>
+</html>
